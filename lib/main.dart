@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice_codepur/pages/Home_page.dart';
 import 'package:flutter_practice_codepur/pages/Login_page.dart';
+import 'package:flutter_practice_codepur/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
       ),
       routes:{
         "/" :(context)=> Login_page(),
-        "/Login" :(context)=> Homepage(),
+        Myroutes.Homeroutes :(context)=> Homepage(),
+        Myroutes.Loginroutes :(context)=> Homepage(),
 
       }
     );
@@ -34,11 +36,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
-
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
