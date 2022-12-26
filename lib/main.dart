@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_codepur/Widgets/themes.dart';
 import 'package:flutter_practice_codepur/pages/Home_page.dart';
 import 'package:flutter_practice_codepur/pages/Login_page.dart';
 import 'package:flutter_practice_codepur/utils/routes.dart';
@@ -17,20 +18,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // home: Homepage(),
       themeMode: ThemeMode.light,
-      theme: ThemeData(primarySwatch: Colors.pink,
-      primaryTextTheme: GoogleFonts.latoTextTheme(),
-      ),
-      
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
+      theme: myTheme.lightTheme(context),
+      darkTheme: myTheme.darkTheme(context),
         // primarySwatch: Colors.orange
-      ),
+      
       initialRoute: Myroutes.Homeroutes,
       routes:{
         "/" :(context)=> Login_page(),
         Myroutes.Homeroutes :(context)=> Homepage(),
         Myroutes.Loginroutes :(context)=> Homepage(),
-
       }
     );
     
