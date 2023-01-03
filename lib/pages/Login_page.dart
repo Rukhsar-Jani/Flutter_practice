@@ -1,6 +1,6 @@
 import 'package:flutter_practice_codepur/utils/routes.dart';
 import 'package:flutter/material.dart';
-
+import 'package:meta/meta.dart';
 
 class Login_page extends StatefulWidget {
   Login_page({super.key});
@@ -70,6 +70,7 @@ changebutton = false;
                       decoration: InputDecoration(
                         hintText: "Enter Username",
                         labelText: 'Username',
+                        border: OutlineInputBorder(),
                       ),
 
                       validator: (value) {
@@ -83,10 +84,13 @@ changebutton = false;
                         setState(() {});
                       },
                     ),
+                    SizedBox(height: 12,),
         
                     TextFormField(
+                      
                       obscureText: true,
                       decoration: InputDecoration(
+                        border: OutlineInputBorder(),
                         hintText: "Enter Password",
                         labelText: 'Password',
                       ),

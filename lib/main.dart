@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       darkTheme: myTheme.darkTheme(context),
         // primarySwatch: Colors.orange
       
-      initialRoute: Myroutes.Homeroutes,
+      initialRoute: '/',
       routes:{
         "/" :(context)=> Login_page(),
         Myroutes.Homeroutes :(context)=> Homepage(),
