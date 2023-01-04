@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_practice_codepur/Widgets/item_widget.dart';
@@ -37,17 +39,50 @@ class _HomepageState extends State<Homepage> {
         title: Text('Catalog App',style: TextStyle(color: Colors.black),),
       ),
       body: (CatalogModele.items !=null && CatalogModele.items.isNotEmpty)? 
-      ListView.builder(
+        Padding(
+          padding: EdgeInsets.all(12),
+          child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 12,
+            crossAxisSpacing: 10,
+            
+            ),
+            
+           itemBuilder:  (context, index) {
+            final item = CatalogModele.items[index];
+             return Card(
+              clipBehavior: Clip.antiAlias,
+              shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(12) ),
+              child: GridTile(
+                header: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurple,
+                  ),
+                  child: Text(item.name,style: TextStyle(color: Colors.white),),
+                  padding: const EdgeInsets.all(12),
+                  ),
+                child: Image.network(item.image),
+                footer: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.deepPurple,
+                  ),
 
-        itemCount: CatalogModele.items.length ,
-        itemBuilder: (context, index) =>
-         ItemWidget(
-          item:CatalogModele.items[index],
-        ), 
+                  child: Text(item.price.toString(),
+                  style: TextStyle(color: Colors.white),
+                  ),
+                  padding: const EdgeInsets.all(12),
+                  ),
+                  ),
+                );
+                
+           },
+           
+          itemCount: CatalogModele.items.length ,),
+        )
           
             
         
-      ):Center(
+      :Center(
         child: CircularProgressIndicator(),
       ),
       drawer: myDrawer(),
