@@ -30,6 +30,8 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   meta: ^1.8.0
+  dependencies:
+  velocity_x: ^3.6.0
 
   flutter:
     sdk: flutter
