@@ -76,7 +76,9 @@ class Catalogheader extends StatelessWidget {
               "Catalog App".text.xl4.bold.color(myTheme.darkBluishColor)
               .make(),
               "Trending Products".text.xl .make(),
+              
             ],
+            
           );
   }
 }
@@ -100,6 +102,7 @@ class CatalogList extends StatelessWidget {
 class CatalogItem extends StatelessWidget {
   // const CatalogItem({super.key});
    final Item catalog;
+
   const CatalogItem({super.key, required this.catalog})
   :assert(catalog !=null);
 
@@ -149,6 +152,7 @@ class CatalogItem extends StatelessWidget {
 class CatalogImage extends StatelessWidget {
   // const CatalogImage({super.key});
   final String image;
+
   const CatalogImage({super.key, required this.image});
 
   @override
