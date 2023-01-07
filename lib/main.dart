@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_practice_codepur/Widgets/themes.dart';
 import 'package:flutter_practice_codepur/pages/Home_page.dart';
 import 'package:flutter_practice_codepur/pages/Login_page.dart';
+import 'package:flutter_practice_codepur/pages/cart_page.dart';
 import 'package:flutter_practice_codepur/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         "/" :(context)=> Login_page(),
         Myroutes.homeroutes :(context)=> Homepage(),
         Myroutes.loginroutes :(context)=> Homepage(),
+        Myroutes.cartRoute :(context)=> CartPage(),
       }
     );
     
