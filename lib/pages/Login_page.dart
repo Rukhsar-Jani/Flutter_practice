@@ -24,7 +24,7 @@ moveToHome(BuildContext context)async{
 changebutton = true;
 });
 await Future.delayed(Duration(seconds: 2));
-await Navigator.pushNamed(context, Myroutes.Homeroutes);
+await Navigator.pushNamed(context, Myroutes.homeroutes);
 setState(() {
 changebutton = false;
 });       

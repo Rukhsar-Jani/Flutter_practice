@@ -22,11 +22,11 @@ class MyApp extends StatelessWidget {
       darkTheme: myTheme.darkTheme(context),
         // primarySwatch: Colors.orange
       
-      initialRoute: Myroutes.Homeroutes,
+      initialRoute: Myroutes.homeroutes,
       routes:{
         "/" :(context)=> Login_page(),
-        Myroutes.Homeroutes :(context)=> Homepage(),
-        Myroutes.Loginroutes :(context)=> Homepage(),
+        Myroutes.homeroutes :(context)=> Homepage(),
+        Myroutes.loginroutes :(context)=> Homepage(),
       }
     );
     
