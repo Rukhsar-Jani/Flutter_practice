@@ -16,10 +16,11 @@ class HomeDetailpage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
+      
       bottomNavigationBar: 
        Container(
         //height: 80,
-         color: myTheme.creamColor,
+         color: myTheme.darkcreamcolor,
          child: ButtonBar(
         
       alignment: MainAxisAlignment.spaceBetween,
@@ -27,7 +28,7 @@ class HomeDetailpage extends StatelessWidget {
       
       children: [
         // h15(context),
-      "\$${catalog.price}".text.color(myTheme.darkBluishColor).bold. 
+      "\$${catalog.price}".text.color(myTheme.creamColor).bold. 
        xl2.make(),
       ElevatedButton(
       style: ButtonStyle(
@@ -36,12 +37,13 @@ class HomeDetailpage extends StatelessWidget {
             shape: MaterialStateProperty.all(StadiumBorder())
             ),
               onPressed: (){},
-            child: "Add to cart". text.color(myTheme.creamColor).xl.bold.make()
+            child: "Add to cart". 
+             text.color(myTheme.creamColor).xl.bold.make()
             ).wh(120, 45)
               ],
             ).pOnly(right: 10).p8(),
        ),
-      backgroundColor: myTheme.creamColor,
+      backgroundColor: context.canvasColor,
       body: SafeArea(
         // bottom: false,
         child: Column(
@@ -55,15 +57,15 @@ class HomeDetailpage extends StatelessWidget {
                 arcType: VxArcType.CONVEY,
                 edge: VxEdge.TOP,
                 child: Container(
-                  color: myTheme.darkBluishColor,
+                  color: context.accentColor,
                   width: context.screenWidth,
                   // COLUMN
                   child: Column(
                     children: [
-                   catalog.name.text.xl4 .color(Colors.white)
+                   catalog.name.text.xl4 .color(context.canvasColor)
                    .bold.make(),
                 catalog.desc.text. 
-                color(Colors.white60).textStyle(context.captionStyle).xl
+          color(context.canvasColor).textStyle(context.captionStyle).xl
                 .make().p1(),
                 10.heightBox,
                     ],

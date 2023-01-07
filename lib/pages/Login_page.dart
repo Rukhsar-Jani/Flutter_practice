@@ -1,6 +1,7 @@
 import 'package:flutter_practice_codepur/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class Login_page extends StatefulWidget {
   Login_page({super.key});
@@ -16,24 +17,24 @@ String name = "";
 bool changebutton = false;
 
 
-final _formkey = GlobalKey<FormState>();
-moveToHome(BuildContext context)async{
+ final _formkey = GlobalKey<FormState>();
+ moveToHome(BuildContext context)async{
   if(_formkey.currentState!.validate());
   
    setState(() {
-changebutton = true;
-});
-await Future.delayed(Duration(seconds: 2));
-await Navigator.pushNamed(context, Myroutes.homeroutes);
-setState(() {
-changebutton = false;
-});       
-}
+ changebutton = true;
+ });
+ await Future.delayed(Duration(seconds: 2));
+ await Navigator.pushNamed(context, Myroutes.homeroutes);
+ setState(() {
+ changebutton = false;
+ });       
+ }
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: context.canvasColor,
       child: SingleChildScrollView(
         child: Form(
           key: _formkey,
@@ -109,7 +110,7 @@ changebutton = false;
                     ),
                     
                     Material(
-                        color: Colors.deepPurple,
+                        color: context.accentColor,
                             borderRadius: BorderRadius.circular
                             (changebutton? 15: 8),
                       child: InkWell(
@@ -127,7 +128,7 @@ changebutton = false;
                           :Text("Login",
                             style: TextStyle(
                                 fontSize: 22,
-                                color: Colors.white,
+                                color: context.canvasColor,
                                 fontWeight: FontWeight.bold),
                           ),
                           // decoration: BoxDecoration(
