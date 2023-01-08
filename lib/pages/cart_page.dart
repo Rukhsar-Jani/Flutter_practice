@@ -3,6 +3,8 @@ import 'package:flutter_practice_codepur/Widgets/themes.dart';
 import 'package:flutter_practice_codepur/models/Catalog.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+import '../models/cart.dart';
+
 
 class CartPage extends StatelessWidget {
   const CartPage({super.key});
@@ -30,15 +32,20 @@ class _CartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+      final _cart = CartModel();
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$9990".text.xl4.color(context.accentColor).make(),
+    "\$${_cart.totalprice}".text.xl4.color(context.accentColor).make(),
           30.widthBox,
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: "Buying not supported yet.".text.make(),
+              ));
+            },
             style: ButtonStyle(
               backgroundColor: 
                MaterialStateProperty.all(context.theme.buttonColor)), 
@@ -58,14 +65,15 @@ class _CartList extends StatefulWidget {
 }
 
 class _nameState extends State<_CartList> {
+  final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: 8,
-      itemBuilder: (context,  index) => const ListTile(
+      itemCount: _cart.items.length,
+      itemBuilder: (context,  index) =>  ListTile(
         leading: Icon(Icons.done_sharp),
         trailing: Icon(Icons.remove_circle_outline_outlined),
-         // title: "Shaheen 2".text.make(),
+          title: _cart.items[index].name.text.make(),
          ),
       );
       

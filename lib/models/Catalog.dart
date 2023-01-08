@@ -3,8 +3,14 @@ import 'dart:convert';
 
 class CatalogModele {
 
+    static final catModel = CatalogModele._internal();
+  CatalogModele._internal();
+  factory CatalogModele() => catModel;
 
-static List<Item> items = [
+ Item getById(int id) =>
+   items.firstWhere((element) => element.id == id,orElse: null);
+
+ static List<Item> items = [
   
   Item(
     id: 1,
