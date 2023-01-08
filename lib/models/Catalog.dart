@@ -3,7 +3,9 @@ import 'dart:convert';
 
 class CatalogModele {
 
+
 static List<Item> items = [
+  
   Item(
     id: 1,
     name: "iphone 12 pro",
